@@ -7,6 +7,11 @@ function universe_post_types() {
 		),
 		'has_archive' => true,
 		'public' => true,
+		'supports' => array(
+			'title',
+			'editor',
+			'custom-fields'
+		),
 		'labels' => array(
 			'name' => 'Events',
 			'add_new_item' => 'Add New Event',
