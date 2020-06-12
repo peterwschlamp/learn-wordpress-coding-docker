@@ -17,6 +17,7 @@ function my_remove_menu_pages() {
 
 add_action('admin_init', 'remove_plugin_menu_pages');
 function remove_plugin_menu_pages() {
+	//add the below when in production
 	//remove_menu_page('edit.php?post_type=acf-field-group');
 }
 
