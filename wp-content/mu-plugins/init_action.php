@@ -1,26 +1,5 @@
 <?php
-
-add_action( 'admin_menu', 'my_remove_menu_pages' );
-function my_remove_menu_pages() {
-	remove_menu_page( 'edit.php' );                   //Posts
-	remove_menu_page( 'upload.php' );                 //Media
-	remove_menu_page( 'edit-comments.php' );          //Comments
-	remove_menu_page( 'themes.php' );                 //Appearance
-	//remove_menu_page( 'users.php' );                  //Users
-	remove_menu_page( 'tools.php' );                  //Tools
-	remove_menu_page('edit.php?post_type=page');
-	
-	//add the below when in production
-	//remove_menu_page( 'options-general.php' );        //Settings
-	//remove_menu_page( 'plugins.php' );
-}
-
-add_action('admin_init', 'remove_plugin_menu_pages');
-function remove_plugin_menu_pages() {
-	//add the below when in production
-	//remove_menu_page('edit.php?post_type=acf-field-group');
-}
-
+add_action('init', 'my_init');
 function my_init() {
 
 	register_post_type('event', array(
@@ -65,9 +44,3 @@ function my_init() {
 		'menu_icon' => 'dashicons-awards'
 	));
 }
-
-
-
-add_action('init', 'my_init')
-
-?>
