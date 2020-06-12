@@ -15,6 +15,10 @@ function my_remove_menu_pages() {
 	//remove_menu_page( 'plugins.php' );
 }
 
+add_action('admin_init', 'remove_plugin_menu_pages');
+function remove_plugin_menu_pages() {
+	//remove_menu_page('edit.php?post_type=acf-field-group');
+}
 
 function my_init() {
 
