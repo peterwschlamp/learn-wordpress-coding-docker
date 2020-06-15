@@ -6,6 +6,8 @@ add_action('init', 'my_init');
 function my_init() {
 
 	register_post_type('event', array(
+		'capability_type' => 'event',
+		'map_meta_cap' => true,
 		'rewrite' => array(
 			'slug' => 'events'
 		),
@@ -28,6 +30,8 @@ function my_init() {
 	));
 
 	register_post_type('program', array(
+		'capability_type' => 'program',
+		'map_meta_cap' => true,
 		'rewrite' => array(
 			'slug' => 'programs'
 		),
