@@ -1,14 +1,14 @@
-single.php<br />
+<?php
+  
+  get_header();
 
-<?php 
-	//blogInfo('name');
-	//blogInfo('description');
+  while(have_posts()) {
+    the_post(); ?>
+    <h2><?php the_title(); ?></h2>
+    <?php the_content(); ?>
+    
+  <?php }
 
-	while(have_posts()){
-		the_post();
-		$url = get_the_permalink();
-		$title = get_the_title();
-		the_title();
-		the_content();
-	}
+  get_footer();
+
 ?>

@@ -1,5 +1,8 @@
 <?php
 add_action('init', 'my_init');
+
+// using show_in_rest to create an endpoint for cpts
+// get w/ http://localhost:8000/wp-json/wp/v2/program/27 or just http://localhost:8000/wp-json/wp/v2/program/
 function my_init() {
 
 	register_post_type('event', array(
@@ -13,6 +16,7 @@ function my_init() {
 			'editor',
 			'custom-fields'
 		),
+		'show_in_rest' => true,
 		'labels' => array(
 			'name' => 'Events',
 			'add_new_item' => 'Add New Event',
@@ -34,6 +38,7 @@ function my_init() {
 			'editor',
 			'custom-fields'
 		),
+		'show_in_rest' => true,
 		'labels' => array(
 			'name' => 'Programs',
 			'add_new_item' => 'Add New Program',
