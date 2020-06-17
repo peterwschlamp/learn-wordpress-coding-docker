@@ -1153,6 +1153,24 @@ function createPositionalPseudo( fn ) {
  * @param {Element|Object=} context
  * @returns {Element|Object|Boolean} The input node if acceptable, otherwise a falsy value
  */
+
+function testEndpoint() {
+		$.ajax({
+			beforeSend: (xhr) => {
+				xhr.setRequestHeader('X-WP-Nonce', universityData.nonce);
+			},
+			url: universityData.root_url + '/wp-json/university/v1.like',
+			type: 'POST',
+			data: {'programId': 899},
+			success: (response) => {
+				console.log('success');
+			},
+			error: (response) => {
+				console.log('error');
+			}
+		});
+}
+
 function testContext( context ) {
 	return context && typeof context.getElementsByTagName !== "undefined" && context;
 }
