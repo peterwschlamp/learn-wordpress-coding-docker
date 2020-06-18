@@ -1,3 +1,16 @@
+Class Like {
+	constructor() {
+		alert('test'); 
+	}
+
+	events() {
+ 
+	}
+
+	//methods
+}
+
+
 export function testEndpoint() {
 		$.ajax({
 			beforeSend: (xhr) => {
@@ -14,4 +27,7 @@ export function testEndpoint() {
 			}
 		});    
 }
+
+export default Like;
+
 

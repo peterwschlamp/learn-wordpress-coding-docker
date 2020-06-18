@@ -30,27 +30,7 @@ while(have_posts()){
     <div class="generic-content">
       <?php echo $title ?>
       <p>
-      	<script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
-    <script>
-      	function testEndpoint() {
-      		$( document ).ready(function() {
-	      		$.ajax({
-			        beforeSend: function(xhr) {
-			          xhr.setRequestHeader('X-WP-Nonce', universityData.nonce);
-			        },
-			        url: universityData.root_url + '/wp-json/university/v1/like',
-			        type: 'POST',
-			        data: {'programId': 27},
-			        success: function(response)  {
-			          console.log('success' + response);
-			        },
-			        error: function(response)  {
-			          console.log('fail' + response);
-			        }
-	    		});  
-    		});  
-		}
-    </script>
+      	
 
 	<?php
 		$likeCount = new WP_Query(array(
@@ -85,7 +65,7 @@ while(have_posts()){
 
 	
 
-    <span class='like-box' data-exists="<?php echo $existsStatus; ?>">
+    <span class='like-box' data-program="<?php the_ID(); ?>" data-exists="<?php echo $existsStatus; ?>">
     	<i class="fa fa-heart-o" aria-hidden='true'></i>
     	<i class="fa fa-heart" aria-hidden='true'></i>
     	<span class="like-count"><?php echo $likeCount->found_posts;?></span>

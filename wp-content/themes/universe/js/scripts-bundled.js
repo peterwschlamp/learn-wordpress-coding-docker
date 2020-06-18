@@ -1154,23 +1154,6 @@ function createPositionalPseudo( fn ) {
  * @returns {Element|Object|Boolean} The input node if acceptable, otherwise a falsy value
  */
 
-function testEndpoint() {
-		$.ajax({
-			beforeSend: (xhr) => {
-				xhr.setRequestHeader('X-WP-Nonce', universityData.nonce);
-			},
-			url: universityData.root_url + '/wp-json/university/v1.like',
-			type: 'POST',
-			data: {'programId': 899},
-			success: (response) => {
-				console.log('success');
-			},
-			error: (response) => {
-				console.log('error');
-			}
-		});
-}
-
 function testContext( context ) {
 	return context && typeof context.getElementsByTagName !== "undefined" && context;
 }
@@ -10364,6 +10347,7 @@ var _jquery2 = _interopRequireDefault(_jquery);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
 
 var HeroSlider = function () {
   function HeroSlider() {
