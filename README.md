@@ -1,3 +1,9 @@
+to run phpmyadmin use:
+sudo docker run --name myadmin -d --link my_wordpress2_db_1:db -p 8080:80 --net my_wordpress2_default phpmyadmin/phpmyadmin
+
+my_wordpress2_default will depend on the project directory name
+
+
 # learn-wordpress-coding-docker
 
 Web apps in wordpress involve mostly coding but to associated custom post types together we use a 
