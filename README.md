@@ -1,3 +1,8 @@
+see this: https://www.andrejciho.com/wordpress/referential-integrity-with-acfs-post-object-relational-field/
+for notes on referential integrity between custom types and their relationships
+
+
+
 to run phpmyadmin use:
 sudo docker run --name myadmin -d --link my_wordpress2_db_1:db -p 8080:80 --net my_wordpress2_default phpmyadmin/phpmyadmin
 

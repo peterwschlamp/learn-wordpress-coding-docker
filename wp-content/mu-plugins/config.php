@@ -1,7 +1,7 @@
 <?php
 
 return array(
-	'hideAdminMenuPosts' => false,
+	'hideAdminMenuPosts' => true,
 	'hideAdminMenuUsers' => false,
     'hideAdminMenuSettings' => false,
     'hideAdminMenuPlugins' => false,

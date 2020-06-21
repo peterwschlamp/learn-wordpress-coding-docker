@@ -31,7 +31,7 @@ add_action('wp_loaded', function() {
 	}
 });
 
-
+//custom login image url
 add_filter('login_headerurl', 'ourHeaderUrl');
 function ourHeaderUrl(){
 	return esc_url(site_url('/'));

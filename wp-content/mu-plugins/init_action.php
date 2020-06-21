@@ -5,6 +5,50 @@ add_action('init', 'my_init');
 // get w/ http://localhost:8000/wp-json/wp/v2/program/27 or just http://localhost:8000/wp-json/wp/v2/program/
 function my_init() {
 
+	register_post_type('webhook', array(
+		'supports' => array('title'),
+		'public' => false,
+		'show_ui' => true,
+		'labels' => array(
+			'name' => 'Webhooks',
+			'add_new_item' => 'Add New Webhook',
+			'edit_item' => 'Edit Webhook',
+			'all_items' => 'All Webhooks',
+			'singular_name' => 'Webhook'
+		),
+		'menu_icon' => 'dashicons-rest-api'
+	));
+
+	register_post_type('ev', array(
+		'supports' => array('title'),
+		'public' => false,
+		'show_ui' => true,
+		'labels' => array(
+			'name' => 'Events',
+			'add_new_item' => 'Add New Event',
+			'edit_item' => 'Edit Event',
+			'all_items' => 'All Events',
+			'singular_name' => 'Event'
+		),
+		'menu_icon' => 'dashicons-calendar'
+	));
+
+	register_post_type('announcement', array(
+		'supports' => array('author'),
+		'public' => false,
+		'show_ui' => true,
+		'labels' => array(
+			'name' => 'Announcements',
+			'add_new_item' => 'Add New Announcement',
+			'edit_item' => 'Edit Announcement',
+			'all_items' => 'All Announcements',
+			'singular_name' => 'Announcement'
+		),
+		'menu_icon' => 'dashicons-megaphone'
+	));
+
+
+/*
 	register_post_type('event', array(
 		'capability_type' => 'event',
 		'map_meta_cap' => true,
@@ -66,4 +110,6 @@ function my_init() {
 		),
 		'menu_icon' => 'dashicons-heart'
 	));
+*/
+	/////////////////////////////////////////////////////////////////////////////
 }
