@@ -5,6 +5,20 @@ add_action('init', 'my_init');
 // get w/ http://localhost:8000/wp-json/wp/v2/program/27 or just http://localhost:8000/wp-json/wp/v2/program/
 function my_init() {
 
+	register_post_type('queue', array(
+		'supports' =>  array('title'),
+		'public' => false,
+		'show_ui' => true,
+		'labels' => array(
+			'name' => 'Queue',
+			'add_new_item' => 'Add New Queue',
+			'edit_item' => 'Edit Queue',
+			'all_items' => 'All Queues',
+			'singular_name' => 'Queue'
+		),
+		'menu_icon' => 'dashicons-editor-ul'
+	));
+
 	register_post_type('webhook', array(
 		'supports' => array('title'),
 		'public' => false,
